@@ -1671,10 +1671,10 @@ int Markdown::processCodeSpan(const char *data, int /*offset*/, int size)
   {
     QCString codeFragment;
     convertStringFragment(codeFragment,data+f_begin,f_end-f_begin);
-    m_out.addStr("<tt>");
+    m_out.addStr("<code>");
     //m_out.addStr(convertToHtml(codeFragment,TRUE));
     m_out.addStr(escapeSpecialChars(codeFragment));
-    m_out.addStr("</tt>");
+    m_out.addStr("</code>");
   }
   TRACE_RESULT(end);
   return end;
@@ -3170,7 +3170,7 @@ QCString Markdown::processBlocks(const QCString &s,const int indent)
         QCString header;
         convertStringFragment(header,data+pi,i-pi-1);
         id = extractTitleId(header, level);
-        //printf("header='%s' is='%s'\n",qPrint(header),qPrint(id));
+        printf("header='%s' is='%s'\n",qPrint(header),qPrint(id));
         if (!header.isEmpty())
         {
           if (!id.isEmpty())

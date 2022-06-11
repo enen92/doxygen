@@ -12532,10 +12532,6 @@ void generateOutput()
   generateFileDocs();
   g_s.end();
 
-  g_s.begin("Generating page documentation...\n");
-  generatePageDocs();
-  g_s.end();
-
   g_s.begin("Generating group documentation...\n");
   generateGroupDocs();
   g_s.end();
@@ -12703,6 +12699,10 @@ void generateOutput()
   {
     msg("Note: based on cache misses the ideal setting for LOOKUP_CACHE_SIZE is %d at the cost of higher memory usage.\n",cacheParam);
   }
+
+  g_s.begin("Generating page documentation...\n");
+  generatePageDocs();
+  g_s.end();
 
   if (Debug::isFlagSet(Debug::Time))
   {

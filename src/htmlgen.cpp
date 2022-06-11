@@ -621,10 +621,10 @@ void HtmlCodeGenerator::codify(const QCString &str)
         case '\n': m_t << "\n"; m_col=0;
                    break;
         case '\r': break;
-        case '<':  m_t << "&lt;"; m_col++;
-                   break;
-        case '>':  m_t << "&gt;"; m_col++;
-                   break;
+        //case '<':  m_t << "&lt;"; m_col++;
+        //           break;
+        //case '>':  m_t << "&gt;"; m_col++;
+        //           break;
         case '&':  m_t << "&amp;"; m_col++;
                    break;
         case '\'': m_t << "&#39;"; m_col++; // &apos; is not valid XHTML
