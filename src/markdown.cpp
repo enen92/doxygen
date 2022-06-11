@@ -1671,10 +1671,10 @@ int Markdown::processCodeSpan(const char *data, int /*offset*/, int size)
   {
     QCString codeFragment;
     convertStringFragment(codeFragment,data+f_begin,f_end-f_begin);
-    m_out.addStr("<tt>");
+    m_out.addStr("<code>");
     //m_out.addStr(convertToHtml(codeFragment,TRUE));
     m_out.addStr(escapeSpecialChars(codeFragment));
-    m_out.addStr("</tt>");
+    m_out.addStr("</code>");
   }
   TRACE_RESULT(end);
   return end;
